@@ -1,13 +1,12 @@
-import Button from 'react-bootstrap/Button';
-import Avatar from '@mui/material/Avatar';
-function App() {
+import {Outlet} from 'react-router';
+import {DrawerAppBar} from './assets/navBar/NavBar';
+export const App = () => {
   return (
     <>
-      <h1>sctm</h1>
-      <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-      <Button variant="primary">Primary</Button>
+      <div className="mt-3">
+        <DrawerAppBar />
+        <Outlet />
+      </div>
     </>
   );
-}
-
-export default App;
+};
