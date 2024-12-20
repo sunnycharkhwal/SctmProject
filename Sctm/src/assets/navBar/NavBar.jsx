@@ -33,15 +33,21 @@ export const DrawerAppBar = props => {
         MUI
       </Typography>
       <Divider />
-      <List>
-        {navItems.map(item => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{textAlign: 'center'}}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
+      <div
+        style={{background: 'black', display: 'flex', flexDirection: 'column'}}>
+        <NavLink to="/" className="me-5 text-white">
+          home
+        </NavLink>
+        <NavLink to="/academy/features" className="me-5 text-white">
+          Features
+        </NavLink>
+        <NavLink to="/academy/overview" className="me-5 text-white">
+          Overview
+        </NavLink>
+        <NavLink to="/academy/pricing" className="me-5 text-white">
+          Pricing
+        </NavLink>
+      </div>
     </Box>
   );
 
@@ -53,21 +59,20 @@ export const DrawerAppBar = props => {
       <CssBaseline />
       <AppBar component="nav">
         <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{mr: 2, display: {sm: 'none'}}}>
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{flexGrow: 1, display: {xs: 'none', sm: 'block'}}}>
+          <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
             MUI
           </Typography>
-          <Box sx={{display: {xs: 'none', sm: 'block'}}}>
+          <div className=" d-flex w-100 justify-content-end align-items-center">
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{display: {md: 'none'}}}>
+              <MenuIcon />
+            </IconButton>
+          </div>
+          <Box sx={{display: {xs: 'none', md: 'block'}}}>
             <div style={{background: 'black'}}>
               <NavLink to="/" className="me-5 text-white">
                 home
@@ -95,15 +100,12 @@ export const DrawerAppBar = props => {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: {xs: 'block', sm: 'none'},
+            display: {xs: 'block', md: 'none'},
             '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth},
           }}>
           {drawer}
         </Drawer>
       </nav>
-      <Box component="main" sx={{p: 3}}>
-        {/* <Toolbar /> */}
-      </Box>
     </Box>
   );
 };
