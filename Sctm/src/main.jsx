@@ -5,7 +5,7 @@ import './scss/index.scss';
 import './scss/res.scss';
 import {RouterProvider} from 'react-router';
 import {router} from './assets/router';
-
+import 'rsuite/dist/rsuite.min.css';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router} />

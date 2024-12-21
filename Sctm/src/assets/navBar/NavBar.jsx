@@ -1,119 +1,103 @@
-import * as React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import MenuIcon from '@mui/icons-material/Menu';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import {NavLink} from 'react-router';
-
+import {
+  AppBar,
+  Box,
+  CssBaseline,
+  Drawer,
+  IconButton,
+  Toolbar,
+} from '@mui/material';
+import {Menu as MenuIcon} from '@mui/icons-material';
+import {NavLink, useNavigate} from 'react-router';
+import {Dropdown} from 'rsuite';
+import './NavBar.scss';
+import Logo from '../../images/logo.png';
+//
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
 
-export const DrawerAppBar = props => {
-  const {window} = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+export const DrawerAppBar = ({window}) => {
+  const navigate = useNavigate();
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-  const handleDrawerToggle = () => {
-    setMobileOpen(prevState => !prevState);
-  };
+  const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
+
+  const container = window ? () => window().document.body : undefined;
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{textAlign: 'center'}}>
-      <Typography variant="h6" sx={{my: 2}}>
-        MUI
-      </Typography>
-      <Divider />
-      <div
-        style={{background: 'black', display: 'flex', flexDirection: 'column'}}>
-        <NavLink to="/" className="me-5 text-white">
-          home
-        </NavLink>
-        <NavLink to="/academy/features" className="me-5 text-white">
-          Features
-        </NavLink>
-        <NavLink to="/academy/overview" className="me-5 text-white">
-          Overview
-        </NavLink>
-        <NavLink to="/academy/pricing" className="me-5 text-white">
-          Pricing
-        </NavLink>
-      </div>
+      <NavLink to="/" className="mb-5 text-white">
+        home
+      </NavLink>
     </Box>
   );
 
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
-
   return (
-    <Box sx={{display: 'flex'}}>
+    <Box sx={{display: 'flex'}} className="navTop">
       <CssBaseline />
       <AppBar component="nav">
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
-            MUI
-          </Typography>
-          <div className=" d-flex w-100 justify-content-end align-items-center">
+          <NavLink to="/" className="text-white">
+            <img className="NavLogo" src={Logo} alt="logo" />
+          </NavLink>
+          <Box sx={{display: {xs: 'none', md: 'flex'}}} className="NavPcBtn">
+            <Dropdown
+              title={<span className="un">Academy management </span>}
+              trigger="hover"
+              className="NavHoverBtn">
+              <Dropdown.Item onClick={() => navigate('/academy/overview')}>
+                overview
+              </Dropdown.Item>
+              <Dropdown.Item onClick={() => navigate('/academy/features')}>
+                features
+              </Dropdown.Item>
+              <Dropdown.Item onClick={() => navigate('/academy/pricing')}>
+                pricing
+              </Dropdown.Item>
+            </Dropdown>
+            <Dropdown
+              title={<span className="un">Booking management</span>}
+              trigger="hover"
+              className="NavHoverBtn">
+              <Dropdown.Item onClick={() => navigate('/academy/overview')}>
+                overview
+              </Dropdown.Item>
+              <Dropdown.Item onClick={() => navigate('/academy/pricing')}>
+                pricing
+              </Dropdown.Item>
+            </Dropdown>
+            <Dropdown
+              title={<span className="un">Event management</span>}
+              className="NavHoverBtn"
+              onClick={() => navigate('/event-management')}></Dropdown>
+          </Box>
+          <Box className="d-flex  justify-content-end align-items-center">
             <IconButton
               color="inherit"
               aria-label="open drawer"
-              edge="start"
               onClick={handleDrawerToggle}
-              sx={{display: {md: 'none'}}}>
+              sx={{display: {md: 'block'}}}
+              className="text-black">
               <MenuIcon />
             </IconButton>
-          </div>
-          <Box sx={{display: {xs: 'none', md: 'block'}}}>
-            <div style={{background: 'black'}}>
-              <NavLink to="/" className="me-5 text-white">
-                home
-              </NavLink>
-              <NavLink to="/academy/features" className="me-5 text-white">
-                Features
-              </NavLink>
-              <NavLink to="/academy/overview" className="me-5 text-white">
-                Overview
-              </NavLink>
-              <NavLink to="/academy/pricing" className="me-5 text-white">
-                Pricing
-              </NavLink>
-            </div>
           </Box>
         </Toolbar>
       </AppBar>
-      <nav>
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: {xs: 'block', md: 'none'},
-            '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth},
-          }}>
-          {drawer}
-        </Drawer>
-      </nav>
+      <Drawer
+        container={container}
+        variant="temporary"
+        open={mobileOpen}
+        onClose={handleDrawerToggle}
+        anchor="right"
+        ModalProps={{keepMounted: true}}
+        sx={{
+          display: {xs: 'block', md: 'none'},
+          '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth},
+        }}>
+        {drawer}
+      </Drawer>
     </Box>
   );
 };
 
-DrawerAppBar.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window: PropTypes.func,
-};
+DrawerAppBar.propTypes = {window: PropTypes.func};

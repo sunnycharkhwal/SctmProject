@@ -1,6 +1,8 @@
 import {createBrowserRouter} from 'react-router';
 import {App} from '../App';
 import {Home} from './pages/Home';
+import {EventManagement} from './pages/EventManagement';
+
 import {Features} from './pages/academyManagement/Features';
 import {Overview} from './pages/academyManagement/Overview';
 import {Pricing} from './pages/academyManagement/Pricing';
@@ -25,6 +27,10 @@ export const router = createBrowserRouter([
       {
         path: '/academy/pricing',
         Component: Pricing,
+      },
+      {
+        path: '/event-management',
+        Component: EventManagement,
       },
     ],
   },
