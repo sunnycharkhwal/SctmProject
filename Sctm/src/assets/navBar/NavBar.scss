@@ -25,7 +25,7 @@
   height: 40px;
 }
 .NavPcBtn {
-  width: 100%;
+  width: 71%;
   justify-content: center;
   align-items: center;
 }
@@ -73,5 +73,64 @@
   }
   .un:hover:after {
     width: 100%;
+  }
+}
+.NavFreeBtn {
+  background-color: var(--btn-bg-color) !important;
+  color: #ffffff !important;
+  font-weight: 500 !important;
+  font-size: 17px !important;
+}
+.NavLoginBtn {
+  color: var(--first-text-color);
+  font-size: 20px;
+  margin-left: 2rem;
+  //   background-color: var(--hover-color);
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: var(--hover-color);
+  }
+}
+
+@media (max-width: 576px) {
+  .NavLoginBtn {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .NavLoginBtn {
+    display: none;
+  }
+}
+@media (min-width: 1024px) {
+  .NavLoginBtn {
+    display: block;
+  }
+  .NavHoverBtn {
+    margin-right: 11px;
+    button {
+      font-size: 15px;
+    }
+  }
+  .NavPcBtn {
+    width: 60%;
+  }
+}
+@media (min-width: 1440px) {
+  .NavHoverBtn {
+    margin-right: 3rem;
+    button {
+      font-size: 16px;
+    }
+  }
+  .NavPcBtn {
+    width: 71%;
   }
 }

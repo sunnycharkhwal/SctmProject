@@ -7,6 +7,8 @@ import {Features} from './pages/academyManagement/Features';
 import {Overview} from './pages/academyManagement/Overview';
 import {Pricing} from './pages/academyManagement/Pricing';
 import {ErrorPage} from './pages/ErrorPage';
+import {Login} from './auth/Login';
+
 export const router = createBrowserRouter([
   {
     path: '',
@@ -37,5 +39,9 @@ export const router = createBrowserRouter([
   {
     path: '*',
     Component: ErrorPage,
+  },
+  {
+    path: '/login',
+    Component: Login,
   },
 ]);
