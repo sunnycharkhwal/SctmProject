@@ -111,7 +111,7 @@
 }
 @media (min-width: 1024px) {
   .NavLoginBtn {
-    display: block;
+    display: flex;
   }
   .NavHoverBtn {
     margin-right: 11px;
@@ -124,6 +124,9 @@
   }
 }
 @media (min-width: 1440px) {
+  .NavLoginBtn {
+    display: flex;
+  }
   .NavHoverBtn {
     margin-right: 3rem;
     button {

@@ -6,8 +6,11 @@ import './scss/res.scss';
 import {RouterProvider} from 'react-router';
 import {router} from './assets/router';
 import 'rsuite/dist/rsuite.min.css';
+import {App} from './App';
+import {Provider} from 'react-redux';
+import {store} from './redux/store';
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>,
+  <Provider store={store}>
+    <App />
+  </Provider>,
 );

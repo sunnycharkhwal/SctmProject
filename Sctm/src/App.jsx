@@ -1,12 +1,32 @@
-import {Outlet} from 'react-router';
-import {DrawerAppBar} from './assets/navBar/NavBar';
+// import {Outlet} from 'react-router';
+// import {DrawerAppBar} from './assets/navBar/NavBar';
+
+// export const App = () => {
+//   return (
+//     <>
+//       <div style={{marginTop: '5rem'}}>
+//         <DrawerAppBar />
+//         <Outlet />
+//       </div>
+//     </>
+//   );
+// };
+
+import {SideBar} from './assets/dashboard/SideBar';
+import {BrowserRouter as Router, Route, Routes} from 'react-router';
+
+import {Home} from './assets/dashboard/page/home/Home';
+import {Whatsapp} from './assets/dashboard/page/Whatsapp/Whatsapp';
+
 export const App = () => {
   return (
-    <>
-      <div style={{marginTop: '5rem'}}>
-        <DrawerAppBar />
-        <Outlet />
-      </div>
-    </>
+    <Router>
+      <SideBar>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/whatsapp" element={<Whatsapp />} />
+        </Routes>
+      </SideBar>
+    </Router>
   );
 };
