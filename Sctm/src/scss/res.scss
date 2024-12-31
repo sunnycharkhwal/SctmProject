@@ -3,10 +3,34 @@
 @use 'var.scss';
 @use 'mixing.scss';
 @media (max-width: 576px) {
+  .mobW {
+    width: 0;
+  }
+  .sidebar {
+    position: absolute;
+    z-index: 1;
+  }
 }
 @media (min-width: 768px) {
+  .mobW {
+    width: 0;
+  }
+  .sidebar {
+    position: absolute;
+    z-index: 1;
+  }
 }
 @media (min-width: 1024px) {
+  .mobW {
+    width: 45px;
+  }
+  .sidebar {
+    position: unset;
+    z-index: 1;
+  }
 }
 @media (min-width: 1440px) {
+  .mobW {
+    width: 45px;
+  }
 }

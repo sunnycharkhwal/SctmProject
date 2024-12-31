@@ -78,7 +78,7 @@ export const SideBar = ({children}) => {
           )}
         </section>
       </motion.div>
-      <main>{children}</main>
+      <main className="RightMain">{children}</main>
     </div>
   );
 };
