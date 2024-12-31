@@ -1,18 +1,18 @@
 import {SideBar} from './SideBar';
 import {BrowserRouter as Router, Route, Routes} from 'react-router';
 
-import {Whatsapp} from './page/Whatsapp/Whatsapp';
 import {Home} from './page/home/Home';
-import React from 'react';
+import {Whatsapp} from './page/Whatsapp/Whatsapp';
+import {TopBar} from './TopBar';
 
-export const Index = () => {
+export const Dashboardindex = () => {
   return (
     <Router>
       <SideBar>
+        <TopBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/whatsapp" element={<Whatsapp />} />
-          <Route path="*" element={<> not found</>} />
         </Routes>
       </SideBar>
     </Router>
