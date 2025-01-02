@@ -1,13 +1,11 @@
 import {Outlet} from 'react-router';
 import {DrawerAppBar} from './assets/navBar/NavBar';
+import {WebRoutes} from './assets/Routes';
 
 export const App = () => {
   return (
     <>
-      <div style={{marginTop: '5rem'}}>
-        <DrawerAppBar />
-        <Outlet />
-      </div>
+      <WebRoutes />
     </>
   );
 };

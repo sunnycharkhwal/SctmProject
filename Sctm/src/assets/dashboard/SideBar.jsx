@@ -8,14 +8,14 @@ import {SidebarMenu} from './SidebarMenu';
 import {toggleSidebar} from '../../redux/Slices/sidebarSlice';
 
 const routes = [
-  {path: '/', name: 'Dashboard', icon: <FaHome />},
-  {path: '/whatsapp', name: 'WhatsApp', icon: <FaUser />},
-  {
-    path: '/settings',
-    name: 'Settings',
-    icon: <BiCog />,
-    subRoutes: [{path: '/settings/profile', name: 'Profile', icon: <FaUser />}],
-  },
+  {path: '/dashboard', name: 'Dashboard', icon: <FaHome />},
+  {path: '/dashboard/whatsapp', name: 'WhatsApp', icon: <FaUser />},
+  // {
+  //   path: '/settings',
+  //   name: 'Settings',
+  //   icon: <BiCog />,
+  //   subRoutes: [{path: '/settings/profile', name: 'Profile', icon: <FaUser />}],
+  // },
 ];
 
 const animationVariants = {
@@ -59,7 +59,14 @@ export const SideBar = ({children}) => {
                 isOpen={isOpen}
               />
             ) : (
-              <NavLink to={route.path} key={index} className="link">
+              <NavLink
+                to={route.path}
+                key={index}
+                className={({isActive}) =>
+                  isActive && window.location.pathname === route.path
+                    ? 'link active'
+                    : 'link'
+                }>
                 <div className="icon">{route.icon}</div>
                 <AnimatePresence>
                   {isOpen && (
