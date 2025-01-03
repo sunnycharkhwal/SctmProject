@@ -3,6 +3,9 @@
 @use 'var.scss';
 @use 'mixing.scss';
 @media (max-width: 576px) {
+  .barsIconMob_two {
+    display: block;
+  }
   .mobW {
     width: 0;
   }
@@ -12,6 +15,9 @@
   }
 }
 @media (min-width: 768px) {
+  .barsIconMob_two {
+    display: block;
+  }
   .mobW {
     width: 0;
   }
@@ -21,8 +27,11 @@
   }
 }
 @media (min-width: 1024px) {
+  .barsIconMob_two {
+    display: none;
+  }
   .mobW {
-    width: 45px;
+    width: 65px;
   }
   .sidebar {
     position: unset;
@@ -30,7 +39,10 @@
   }
 }
 @media (min-width: 1440px) {
+  .barsIconMob_two {
+    display: none;
+  }
   .mobW {
-    width: 45px;
+    width: 55px;
   }
 }

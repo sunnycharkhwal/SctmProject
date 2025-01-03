@@ -11,7 +11,9 @@ export const Login = () => {
         home
       </NavLink>
       <br />
-      <Button className=" btn-secondary" onClick={() => navigate('/dashboard')}>
+      <Button
+        className=" btn-secondary"
+        onClick={() => navigate('/dashboard/student')}>
         Dashboard
       </Button>
     </>

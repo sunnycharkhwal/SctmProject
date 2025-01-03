@@ -4,12 +4,12 @@ import {Dashboardindex} from './dashboard/Dashboardindex';
 import {WebsiteRoutes} from './WebsiteRoutes';
 import {ErrorPage} from './pages/ErrorPage';
 const router = createBrowserRouter([
+  // {
+  //   path: '/*',
+  //   element: <WebsiteRoutes />,
+  // },
   {
-    path: '/*',
-    element: <WebsiteRoutes />,
-  },
-  {
-    path: '/login',
+    path: '/',
     element: <Login />,
   },
   {

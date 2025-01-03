@@ -6,9 +6,12 @@ import {useDispatch, useSelector} from 'react-redux';
 
 import {SidebarMenu} from './SidebarMenu';
 import {toggleSidebar} from '../../redux/Slices/sidebarSlice';
+import {SlGraduation} from 'react-icons/sl';
+import {RiSidebarFoldLine} from 'react-icons/ri';
 
 const routes = [
-  {path: '/dashboard', name: 'Dashboard', icon: <FaHome />},
+  // {path: '/dashboard', name: 'dashboard', icon: <SlGraduation />},
+  {path: '/dashboard/student', name: 'student', icon: <SlGraduation />},
   {path: '/dashboard/whatsapp', name: 'WhatsApp', icon: <FaUser />},
   // {
   //   path: '/settings',
@@ -45,8 +48,8 @@ export const SideBar = ({children}) => {
               </motion.h1>
             )}
           </AnimatePresence>
-          <div className="bars">
-            <FaBars onClick={() => dispatch(toggleSidebar())} />
+          <div className={`barsIcon ${isOpen ? '' : 'barsIconMob'}`}>
+            <RiSidebarFoldLine onClick={() => dispatch(toggleSidebar())} />
           </div>
         </div>
         <section className="routes">
@@ -64,7 +67,7 @@ export const SideBar = ({children}) => {
                 key={index}
                 className={({isActive}) =>
                   isActive && window.location.pathname === route.path
-                    ? 'link active'
+                    ? 'link activeNav'
                     : 'link'
                 }>
                 <div className="icon">{route.icon}</div>
