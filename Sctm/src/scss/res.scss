@@ -3,6 +3,23 @@
 @use 'var.scss';
 @use 'mixing.scss';
 @media (max-width: 576px) {
+  .PaginationDiv {
+    .MuiPaginationItem-previousNext {
+      display: block !important;
+    }
+    .PaginationBtn {
+      display: none;
+    }
+  }
+  .myTable {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .my_con {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
   .SearchTopDiv {
     padding: 10px 10px;
   }
@@ -24,6 +41,11 @@
   }
 }
 @media (min-width: 768px) {
+  .myTable {
+    display: inline-table;
+    overflow-x: hidden;
+    white-space: unset;
+  }
   .barsIconMob_two {
     display: block;
   }
@@ -36,6 +58,11 @@
   }
 }
 @media (min-width: 1024px) {
+  .myTable {
+    display: inline-table;
+    overflow-x: hidden;
+    white-space: unset;
+  }
   .barsIconMob_two {
     display: none;
   }
@@ -48,6 +75,11 @@
   }
 }
 @media (min-width: 1440px) {
+  .myTable {
+    display: inline-table;
+    overflow-x: hidden;
+    white-space: unset;
+  }
   .barsIconMob_two {
     display: none;
   }
