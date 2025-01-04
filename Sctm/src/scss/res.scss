@@ -3,6 +3,15 @@
 @use 'var.scss';
 @use 'mixing.scss';
 @media (max-width: 576px) {
+  .SearchTopDiv {
+    padding: 10px 10px;
+  }
+  .pageTopBar {
+    padding: 11px 10px;
+    .pageTopBar_btn {
+      right: 10px;
+    }
+  }
   .barsIconMob_two {
     display: block;
   }
