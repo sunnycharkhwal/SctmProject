@@ -383,6 +383,7 @@ body {
 // form
 
 .form_div {
+  position: relative;
   label {
     color: var(--first-text-color);
     font-family: Poppins;
@@ -390,6 +391,34 @@ body {
     font-style: normal;
     font-weight: 400;
     margin-bottom: 5px;
+  }
+
+  .UploadBtn {
+    position: absolute;
+    cursor: pointer;
+    bottom: 16px;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.6);
+    .icon {
+      padding: 4px;
+      margin-right: 8px;
+      svg {
+        font-size: 17px;
+        color: #fff;
+      }
+    }
+    .btnText {
+      color: #fff;
+      font-family: Poppins;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
   }
   .UploadInput {
     border-radius: 6px;
@@ -419,4 +448,43 @@ body {
   // height: 39rem;
   // overflow: overlay;
   margin-bottom: 5rem;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+.formBanner {
+  border-bottom: none !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+.formFooter {
+  background-color: #efefef;
+  width: 100%;
+  height: 144px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  flex-direction: column;
+  img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 53px;
+    height: 46px;
+  }
+  p {
+    color: rgba(0, 0, 0, 0.3);
+    font-family: Poppins;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 17px;
+  }
+}
+.formTop_Title {
+  text-align: center;
+  color: var(--first-text-color);
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 600;
 }

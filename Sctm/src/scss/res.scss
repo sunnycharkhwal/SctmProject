@@ -3,6 +3,10 @@
 @use 'var.scss';
 @use 'mixing.scss';
 @media (max-width: 576px) {
+  .formTop_div {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
   .PaginationDiv {
     .MuiPaginationItem-previousNext {
       display: block !important;
@@ -38,9 +42,14 @@
   .sidebar {
     position: absolute;
     z-index: 1;
+    height: 100vh;
   }
 }
 @media (min-width: 768px) {
+  .formTop_div {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
   .myTable {
     display: inline-table;
     overflow-x: hidden;
@@ -55,9 +64,14 @@
   .sidebar {
     position: absolute;
     z-index: 1;
+    height: 100vh;
   }
 }
 @media (min-width: 1024px) {
+  .formTop_div {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
   .myTable {
     display: inline-table;
     overflow-x: hidden;
@@ -72,9 +86,14 @@
   .sidebar {
     position: unset;
     z-index: 1;
+    height: auto;
   }
 }
 @media (min-width: 1440px) {
+  .formTop_div {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
   .myTable {
     display: inline-table;
     overflow-x: hidden;

@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {PageTopBarWithSubTitle} from '../../../component/pageTopBar';
 import {SlGraduation} from 'react-icons/sl';
 import UploadImg from '../../../../images/UploadImg.svg';
+import {IoCameraOutline} from 'react-icons/io5';
+import {BlueButton} from '../../../component/Button';
 export const AddStudent = () => {
   return (
     <>
@@ -10,8 +12,29 @@ export const AddStudent = () => {
         title="Student"
         subTitle="Add student"
       />
-      <form action="" className="my_con formTop_div">
+      <form action="" className="formTop_div">
         <div className="row g-3">
+          <div className="col-12">
+            <div className="form_div">
+              <div className="formFooter formBanner">
+                <img src={UploadImg} alt="img" />
+                <p>Banner size 1080px * 400px</p>
+              </div>
+              <input type="file" id="banner" hidden />
+              <label htmlFor="banner" className="UploadBtn">
+                <span className="icon">
+                  <IoCameraOutline />
+                </span>
+                <span className="btnText">
+                  Upload banner <br />
+                  1080px * 400px
+                </span>
+              </label>
+            </div>
+          </div>
+          <div className="col-12 formTop_Title">
+            Individual Registration form
+          </div>
           <div className="col-12">
             <div className="form_div">
               <label htmlFor="formFile1" className="form-label">
@@ -260,22 +283,22 @@ export const AddStudent = () => {
               <label htmlFor="formFile" className="form-label">
                 Emergency contact number
               </label>
-              <div className="row">
-                <div className="col-4">
+              <div className="row g-3 ">
+                <div className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
                   <input
                     type="text"
                     className="form-control NormalInput"
                     placeholder="FATHER"
                   />
                 </div>
-                <div className="col-4">
+                <div className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
                   <input
                     type="text"
                     className="form-control NormalInput"
                     placeholder="MOTHER"
                   />
                 </div>
-                <div className="col-4">
+                <div className="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
                   <input
                     type="text"
                     className="form-control NormalInput"
@@ -315,15 +338,15 @@ export const AddStudent = () => {
                 Name of the person who is signing the form and relation with the
                 Participant in Case of minor
               </label>
-              <div className="row">
-                <div className="col-6">
+              <div className="row g-3">
+                <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                   <input
                     type="text"
                     className="form-control NormalInput"
                     placeholder="NAME OF THE PERSON SIGNING THE FORM"
                   />
                 </div>
-                <div className="col-6">
+                <div className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                   <input
                     type="text"
                     className="form-control NormalInput"
@@ -338,10 +361,24 @@ export const AddStudent = () => {
               <label htmlFor="formFile" className="form-label">
                 Footer
               </label>
-              <div>
+              <div className="formFooter">
                 <img src={UploadImg} alt="img" />
+                <p>Footer size 1080px * 400px</p>
               </div>
+              <input type="file" id="footer" hidden />
+              <label htmlFor="footer" className="UploadBtn">
+                <span className="icon">
+                  <IoCameraOutline />
+                </span>
+                <span className="btnText">
+                  Upload footer <br />
+                  1080px * 400px
+                </span>
+              </label>
             </div>
+          </div>
+          <div className="col-12 text-center">
+            <BlueButton title="Submit" />
           </div>
         </div>
       </form>
