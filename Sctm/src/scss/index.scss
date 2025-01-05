@@ -37,7 +37,7 @@ body {
 .sidebar {
   background: #f0f0f0;
   color: white;
-  height: 100vh;
+  height: auto;
   overflow-y: auto;
   transition: width 0.5s ease; /* Spring-like transition */
 }
@@ -379,4 +379,44 @@ body {
     font-size: 14px;
     font-weight: 400;
   }
+}
+// form
+
+.form_div {
+  label {
+    color: var(--first-text-color);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 5px;
+  }
+  .UploadInput {
+    border-radius: 6px;
+    border: 1px solid var(--boborder-color);
+    // background: #f6f8fa;
+  }
+  .selectInput {
+    border-radius: 6px;
+    border: 1px solid var(--boborder-color);
+  }
+  textarea {
+    border-radius: 6px;
+    border: 1px solid var(--boborder-color);
+    background: #f6f8fa;
+  }
+  .NormalInput {
+    border-radius: 6px;
+    border: 1px solid var(--boborder-color);
+    background: #f6f8fa;
+    color: #636c76;
+    &::placeholder {
+      color: #636c76;
+    }
+  }
+}
+.formTop_div {
+  // height: 39rem;
+  // overflow: overlay;
+  margin-bottom: 5rem;
 }
