@@ -1,6 +1,8 @@
 import {Button} from '@mui/material';
 import {useNavigate} from 'react-router';
-
+import React, {useState} from 'react';
+import {GoCopy} from 'react-icons/go';
+import {BsArrowLeft} from 'react-icons/bs';
 export const BlueButton = ({title = 'add title', link, onClick}) => {
   const LinkButton = () => {
     const navigate = useNavigate();
@@ -23,4 +25,32 @@ export const BlueButton = ({title = 'add title', link, onClick}) => {
   };
 
   return link ? <LinkButton /> : <NormalButton />;
+};
+
+export const CopyButton = ({value}) => {
+  const [text, setText] = useState('Copy');
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText('http://localhost:5173' + value);
+    setText('Copied');
+    setTimeout(() => setText('Copy'), 2000);
+  };
+  return (
+    <button onClick={handleCopy} className="CopyBtn">
+      <GoCopy />
+      {text} link
+    </button>
+  );
+};
+export const BackBar = props => {
+  const navigate = useNavigate();
+  return (
+    <div className="PageBackBar">
+      <span className="TextDiv" onClick={() => navigate(props.pageLink)}>
+        <BsArrowLeft />
+        <span className="Text">Back</span>
+      </span>
+      <CopyButton value={props.copyLink} />
+    </div>
+  );
 };

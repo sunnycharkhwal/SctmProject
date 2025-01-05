@@ -3,6 +3,15 @@
 @use 'var.scss';
 @use 'mixing.scss';
 @media (max-width: 576px) {
+  .PageBackBar {
+    padding: 8px 10px;
+    .CopyBtn {
+      right: 20px;
+    }
+  }
+  .RightMain {
+    height: 42rem;
+  }
   .formTop_div {
     padding-left: 10px;
     padding-right: 10px;
@@ -42,10 +51,12 @@
   .sidebar {
     position: absolute;
     z-index: 1;
-    height: 100vh;
   }
 }
 @media (min-width: 768px) {
+  .RightMain {
+    height: 42rem;
+  }
   .formTop_div {
     padding-left: 50px;
     padding-right: 50px;
@@ -64,10 +75,12 @@
   .sidebar {
     position: absolute;
     z-index: 1;
-    height: 100vh;
   }
 }
 @media (min-width: 1024px) {
+  .RightMain {
+    height: 48rem;
+  }
   .formTop_div {
     padding-left: 100px;
     padding-right: 100px;
@@ -86,7 +99,6 @@
   .sidebar {
     position: unset;
     z-index: 1;
-    height: auto;
   }
 }
 @media (min-width: 1440px) {

@@ -1,19 +1,12 @@
 import React, {useState} from 'react';
-import {PageTopBarWithSubTitle} from '../../../component/pageTopBar';
-import {SlGraduation} from 'react-icons/sl';
-import UploadImg from '../../../../images/UploadImg.svg';
+
+import UploadImg from '../../images/UploadImg.svg';
 import {IoCameraOutline} from 'react-icons/io5';
-import {BackBar, BlueButton, CopyButton} from '../../../component/Button';
-import {BsArrowLeft} from 'react-icons/bs';
-export const AddStudent = () => {
+import {BlueButton} from '../component/Button';
+
+export const AddStudentForm = () => {
   return (
     <>
-      <PageTopBarWithSubTitle
-        icon={<SlGraduation />}
-        title="Student"
-        subTitle="Add student"
-      />
-      <BackBar pageLink={-1} copyLink="/add-student-form" />
       <form action="" className="formTop_div">
         <div className="row g-3">
           <div className="col-12">

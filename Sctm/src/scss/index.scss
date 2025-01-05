@@ -31,13 +31,18 @@ body {
 }
 .RightMain {
   width: 100%;
+  height: 48rem;
+  overflow: scroll;
 }
 
 // sidebar
+.sidebarTopDiv {
+  background: #f0f0f0;
+}
 .sidebar {
   background: #f0f0f0;
   color: white;
-  height: auto;
+  height: 100vh;
   overflow-y: auto;
   transition: width 0.5s ease; /* Spring-like transition */
 }
@@ -447,7 +452,8 @@ body {
 .formTop_div {
   // height: 39rem;
   // overflow: overlay;
-  margin-bottom: 5rem;
+  padding-top: 32px;
+  padding-bottom: 32px;
   padding-left: 200px;
   padding-right: 200px;
 }
@@ -487,4 +493,59 @@ body {
   font-family: Poppins;
   font-size: 18px;
   font-weight: 600;
+}
+// PageBackBar
+.PageBackBar {
+  position: relative;
+  height: 50px;
+  padding: 8px 32px;
+  background: rgba(208, 215, 222, 0.2);
+  display: flex;
+  align-items: center;
+  .CopyBtn {
+    position: absolute;
+    top: 15px;
+    right: 32px;
+  }
+  .TextDiv {
+    padding: 5px 3px;
+    color: #636c76;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    .Text {
+      margin-left: 8px;
+    }
+    svg {
+      font-size: 18px;
+      color: #636c76;
+      margin-bottom: 2px;
+    }
+    &:hover {
+      color: #3656f4;
+      svg {
+        color: #3656f4;
+      }
+      Text {
+        color: #3656f4;
+      }
+    }
+  }
+}
+.CopyBtn {
+  background-color: transparent;
+  outline: none;
+  color: #3656f4;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: -0.15px;
+  svg {
+    margin-right: 5px;
+  }
 }
