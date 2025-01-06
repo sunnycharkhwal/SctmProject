@@ -3,6 +3,14 @@
 @use 'var.scss';
 @use 'mixing.scss';
 @media (max-width: 576px) {
+  .PaginationDiv {
+    .MuiPaginationItem-root {
+      min-width: 25px !important;
+      height: 25px !important;
+      padding: 0 1px !important;
+      margin: 0 1px !important;
+    }
+  }
   .StudentDetail_QrCode {
     p {
       margin-bottom: 16px;
