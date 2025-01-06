@@ -371,7 +371,7 @@ export const AddStudentForm = () => {
             </div>
           </div>
           <div className="col-12 text-center">
-            <BlueButton title="Submit" />
+            <BlueButton title="Contained" />
           </div>
         </div>
       </form>

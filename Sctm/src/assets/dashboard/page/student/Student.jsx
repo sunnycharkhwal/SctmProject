@@ -9,6 +9,7 @@ import {IoFilterOutline} from 'react-icons/io5';
 import KeyboardArrowLeftOutlinedIcon from '@mui/icons-material/KeyboardArrowLeftOutlined';
 import {NewTooltip} from '../../../component/NewTooltip';
 import {span} from 'framer-motion/client';
+import {useNavigate} from 'react-router';
 
 export const Student = () => {
   const [page, setPage] = useState(1);
@@ -29,13 +30,14 @@ export const Student = () => {
       setPage(page - 1);
     }
   };
+  const navigate = useNavigate();
   return (
     <>
       <PageTopBarWithBtn
         icon={<SlGraduation />}
         title="Student"
         linkTitle="Add student"
-        link="/dashboard/addStudent"
+        link="/dashboard/student/add-student"
       />
       <div className="SearchTopDiv">
         <div className="SearchBox my_mr">
@@ -71,7 +73,10 @@ export const Student = () => {
               <td className="student_name">
                 <NewTooltip
                   children={
-                    <span>
+                    <span
+                      onClick={() =>
+                        navigate('/dashboard/student/student-detail')
+                      }>
                       {'Sunny charkhwal  A'.length > 10
                         ? `${' Sunny charkhwal A'.substring(0, 10)}...`
                         : ' Sunny charkhwal A'}

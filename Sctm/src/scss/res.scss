@@ -3,6 +3,14 @@
 @use 'var.scss';
 @use 'mixing.scss';
 @media (max-width: 576px) {
+  .StudentDetail_QrCode {
+    p {
+      margin-bottom: 16px;
+    }
+  }
+  .StudentDetailDiv {
+    padding: 10px 10px;
+  }
   .PageBackBar {
     padding: 8px 10px;
     .CopyBtn {
@@ -54,6 +62,9 @@
   }
 }
 @media (min-width: 768px) {
+  .StudentDetailDiv {
+    padding: 32px 32px;
+  }
   .RightMain {
     height: 42rem;
   }
@@ -78,6 +89,9 @@
   }
 }
 @media (min-width: 1024px) {
+  .StudentDetailDiv {
+    padding: 32px 50px;
+  }
   .RightMain {
     height: 48rem;
   }
@@ -102,6 +116,9 @@
   }
 }
 @media (min-width: 1440px) {
+  .StudentDetailDiv {
+    padding: 32px 100px;
+  }
   .formTop_div {
     padding-left: 200px;
     padding-right: 200px;

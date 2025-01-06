@@ -377,9 +377,6 @@ export const AddStudent = () => {
               </label>
             </div>
           </div>
-          <div className="col-12 text-center">
-            <BlueButton title="Submit" />
-          </div>
         </div>
       </form>
     </>
