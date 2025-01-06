@@ -4,6 +4,8 @@ import {Dashboardindex} from './dashboard/Dashboardindex';
 import {WebsiteRoutes} from './WebsiteRoutes';
 import {ErrorPage} from './pages/ErrorPage';
 import {AddStudentForm} from './form/AddStudentForm';
+import {AddStudentFormDetail} from './form/AddStudentFormDetail';
+
 const router = createBrowserRouter([
   // {
   //   path: '/*',
@@ -12,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: '/add-student-form',
     element: <AddStudentForm />,
+  },
+  {
+    path: '/add-student-form-detail',
+    element: <AddStudentFormDetail />,
   },
   {
     path: '/',

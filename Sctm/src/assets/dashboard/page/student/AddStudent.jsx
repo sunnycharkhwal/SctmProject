@@ -3,8 +3,7 @@ import {PageTopBarWithSubTitle} from '../../../component/pageTopBar';
 import {SlGraduation} from 'react-icons/sl';
 import UploadImg from '../../../../images/UploadImg.svg';
 import {IoCameraOutline} from 'react-icons/io5';
-import {BackBar, BlueButton, CopyButton} from '../../../component/Button';
-import {BsArrowLeft} from 'react-icons/bs';
+import {BackBar} from '../../../component/Button';
 export const AddStudent = () => {
   return (
     <>

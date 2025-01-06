@@ -235,6 +235,25 @@ body {
     color: #fff !important;
     font-family: Poppins !important;
     text-transform: capitalize !important;
+    .text {
+      text-transform: capitalize !important;
+    }
+  }
+}
+.pageTopBar_btn {
+  position: absolute;
+  top: 6.5px;
+  right: 36px;
+  border-radius: 6px !important;
+  background-color: #3656f4 !important;
+  font-size: 14px !important;
+  font-style: normal;
+  font-weight: 400 !important;
+  color: #fff !important;
+  font-family: Poppins !important;
+  text-transform: capitalize !important;
+  .text {
+    text-transform: capitalize !important;
   }
 }
 // SearchTopDiv
@@ -655,5 +674,33 @@ body {
     @include bg_img;
     width: 29rem;
     height: 100%;
+  }
+}
+.SubmitFormModalDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  img {
+    width: 5rem;
+    height: 5rem;
+    @include bg_img;
+  }
+  p {
+    color: var(--first-text-color);
+    font-family: Poppins;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 16px;
+    margin-bottom: 5px;
+  }
+  .copyDiv {
+    color: var(--first-text-color);
+    font-family: Poppins;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 10px;
   }
 }

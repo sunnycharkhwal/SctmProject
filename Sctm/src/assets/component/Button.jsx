@@ -28,7 +28,7 @@ export const BlueButton = ({title = 'add title', link, onClick}) => {
   return link ? <LinkButton /> : <NormalButton />;
 };
 
-export const CopyButton = ({value}) => {
+export const CopyButton = ({value, title}) => {
   const [text, setText] = useState('Copy');
 
   const handleCopy = () => {
@@ -39,7 +39,7 @@ export const CopyButton = ({value}) => {
   return (
     <button onClick={handleCopy} className="CopyBtn">
       <GoCopy />
-      {text} & share form
+      {text} {title}
     </button>
   );
 };
@@ -51,7 +51,7 @@ export const BackBar = props => {
         <BsArrowLeft />
         <span className="Text">Back</span>
       </span>
-      <CopyButton value={props.copyLink} />
+      <CopyButton value={props.copyLink} title="& share form" />
     </div>
   );
 };

@@ -3,8 +3,10 @@ import React, {useState} from 'react';
 import UploadImg from '../../images/UploadImg.svg';
 import {IoCameraOutline} from 'react-icons/io5';
 import {BlueButton} from '../component/Button';
+import {useNavigate} from 'react-router';
 
 export const AddStudentForm = () => {
+  const navigate = useNavigate();
   return (
     <>
       <form action="" className="formTop_div">
@@ -371,7 +373,10 @@ export const AddStudentForm = () => {
             </div>
           </div>
           <div className="col-12 text-center">
-            <BlueButton title="Contained" />
+            <BlueButton
+              onClick={() => navigate('/add-student-form-detail')}
+              title="continue"
+            />
           </div>
         </div>
       </form>
