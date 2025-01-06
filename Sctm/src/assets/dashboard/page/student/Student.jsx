@@ -7,6 +7,7 @@ import {FiSearch} from 'react-icons/fi';
 import {Button} from '@mui/material';
 import {IoFilterOutline} from 'react-icons/io5';
 import KeyboardArrowLeftOutlinedIcon from '@mui/icons-material/KeyboardArrowLeftOutlined';
+import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
 import {NewTooltip} from '../../../component/NewTooltip';
 import {span} from 'framer-motion/client';
 import {useNavigate} from 'react-router';
@@ -125,6 +126,9 @@ export const Student = () => {
               disabled={page === count}
               className="PaginationBtn">
               Next
+              <span>
+                <KeyboardArrowRightOutlinedIcon />
+              </span>
             </Button>
           </Stack>
         </div>
