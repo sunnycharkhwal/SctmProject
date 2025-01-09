@@ -16,6 +16,9 @@ export const Login = () => {
         onClick={() => navigate('/dashboard/student')}>
         Dashboard
       </Button>
+      <Button className=" btn-secondary" onClick={() => navigate('/join')}>
+        Join
+      </Button>
     </>
   );
 };

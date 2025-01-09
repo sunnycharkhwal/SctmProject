@@ -3,6 +3,29 @@
 @use 'var.scss';
 @use 'mixing.scss';
 @media (max-width: 576px) {
+  .joinDiv {
+    padding: 10px;
+    align-items: center;
+    .joinDivInner {
+      height: 30rem;
+      .BackBtn {
+        top: 10px;
+        left: 10px;
+      }
+      .buttonDiv {
+        flex-direction: column;
+        .pageTopBar_btn {
+          margin-left: 0;
+          margin-top: 16px;
+        }
+      }
+      .LinkDiv {
+        a {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
   .PaginationDiv {
     .MuiPaginationItem-root {
       min-width: 25px !important;

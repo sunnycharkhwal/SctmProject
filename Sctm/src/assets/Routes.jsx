@@ -5,6 +5,7 @@ import {WebsiteRoutes} from './WebsiteRoutes';
 import {ErrorPage} from './pages/ErrorPage';
 import {AddStudentForm} from './form/AddStudentForm';
 import {AddStudentFormDetail} from './form/AddStudentFormDetail';
+import {Join} from './auth/Join';
 
 const router = createBrowserRouter([
   // {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Login />,
+  },
+  {
+    path: '/join',
+    element: <Join />,
   },
   {
     path: '/dashboard/*',

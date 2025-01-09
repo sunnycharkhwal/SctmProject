@@ -28,6 +28,29 @@ export const BlueButton = ({title = 'add title', link, onClick}) => {
   return link ? <LinkButton /> : <NormalButton />;
 };
 
+export const OutlinedBtn = ({title = 'add title', link, onClick}) => {
+  const LinkButton = () => {
+    const navigate = useNavigate();
+    return (
+      <Button
+        className="btnWithIcon"
+        variant="outlined"
+        onClick={() => navigate(link)}>
+        <span className="text">{title}</span>
+      </Button>
+    );
+  };
+
+  const NormalButton = () => {
+    return (
+      <Button className="btnWithIcon" variant="outlined" onClick={onClick}>
+        <span className="text">{title}</span>
+      </Button>
+    );
+  };
+
+  return link ? <LinkButton /> : <NormalButton />;
+};
 export const CopyButton = ({value, title}) => {
   const [text, setText] = useState('Copy');
 
